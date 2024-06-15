@@ -18,13 +18,25 @@ from django.contrib import admin
 from django.urls import path , include
 from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
-from app.views import index
+from app.views import (
+    HomeView,
+    ContactView,
+    AgendaListView,
+    AgendaDetailView,
+    AgendaCreateView,
+    create_cita
+)
 
 from proyecto import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
+    path('', HomeView.as_view(), name='home'),
+    path('contacto/', ContactView.as_view(), name='contacto'),
+    path('agendas/', AgendaListView.as_view(), name='agendas'),
+    path('agendas/<int:pk>/', AgendaDetailView.as_view(), name='agenda_detail'),
+    path('agendas/nuevo/', AgendaCreateView.as_view(), name='agenda_create'),
+    path('agendas/<int:pk>/cita/', create_cita, name='create_cita'),
     path("accounts/", include("django.contrib.auth.urls"))
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

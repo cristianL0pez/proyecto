@@ -31,13 +31,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1','https://8000-idx-proyecto-1718413446644.cluster-4xpux6pqdzhrktbhjf2cumyqtg.cloudworkstations.dev']
 
 LOGIN_REDIRECT_URL = "index"
 LOGOUT_REDIRECT_URL = "index"
 LOGIN_URL = 'login'  # URL a la que se redirige si un usuario no está autenticado y trata de acceder a una vista protegida
 LOGOUT_URL = 'index' 
-
+AUTH_USER_MODEL = 'app.Usuario'
 
 # Application definition
 

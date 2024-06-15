@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Logout</title>
+    <title>Home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
-        <h2 class="mt-5">Logout</h2>
-        <p>Has cerrado sesión correctamente.</p>
-        <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+        <h1 class="mt-5">Bienvenido a la página principal</h1>
+        <div class="mt-3">
+            <a href="{% url 'contacto' %}" class="btn btn-primary">Contacto</a>
+            <a href="{% url 'agendas' %}" class="btn btn-primary">Agendas</a>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
